@@ -6,6 +6,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers/index";
 import { BrowserRouter } from "react-router-dom";
+import "remixicon/fonts/remixicon.css";
 
 const store = createStore(reducers);
 

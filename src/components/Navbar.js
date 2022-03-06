@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className="w-full px-2 sm:px-4 py-3 flex items-center justify-between">
         <div className="flex items-center justify-between w-full">
           <Link to="/" className="mr-2 sm:mr-5 flex items-center">
-            <h1 className="text-3xl font-bold text-theme-orange-300 xl:block">
+            <h1 className="text-3xl font-bold text-theme-orange-300">
               Parker's Pizza
             </h1>
           </Link>

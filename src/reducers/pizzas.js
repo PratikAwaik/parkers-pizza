@@ -1,7 +1,8 @@
 const pizzasReducer = (state = [], action) => {
   switch (action.type) {
     case "SET_PIZZAS":
-      return action.payload;
+      const newState = [...action.payload];
+      return newState;
     default:
       return state;
   }

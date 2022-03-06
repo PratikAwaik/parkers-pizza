@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import loadingIcon from "../images/loading.gif";
+import Filters from "./Filters";
+import Pizza from "./Pizza";
 
 const PizzaList = () => {
   const [loading, setLoading] = useState(true);
@@ -8,13 +10,17 @@ const PizzaList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68")
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch({ type: "SET_PIZZAS", payload: data });
-        setLoading(false);
-      });
-  }, [dispatch]);
+    if (pizzas.length === 0) {
+      fetch("https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68")
+        .then((res) => res.json())
+        .then((data) => {
+          dispatch({ type: "SET_PIZZAS", payload: data });
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  }, [dispatch, pizzas]);
 
   return (
     <section>
@@ -26,14 +32,16 @@ const PizzaList = () => {
         </p>
       </div>
 
+      <Filters />
+
       {loading ? (
         <div className="flex items-center justify-center">
           <img className="w-12 h-12" src={loadingIcon} alt="Loading Icon" />
         </div>
       ) : (
-        <div className="max-w-6xl px-5 my-8 mx-auto">
+        <div className="max-w-6xl px-5 my-8 mx-auto flex items-center justify-around flex-wrap">
           {pizzas.map((pizza) => (
-            <span key={pizza.id}>{pizza.name}</span>
+            <Pizza key={pizza.id} pizza={pizza} />
           ))}
         </div>
       )}
