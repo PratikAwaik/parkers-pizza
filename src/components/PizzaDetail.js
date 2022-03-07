@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Modal from "./Modal";
 
 const PizzaDetail = () => {
   const [pizzaDetail, setPizzaDetail] = useState({});
@@ -13,8 +14,6 @@ const PizzaDetail = () => {
       setPizzaDetail(foundPizza);
     }
   }, [id, pizzas]);
-
-  console.log(pizzaDetail);
 
   return (
     <div className="max-w-2xl mx-auto my-16 p-8 h-full">
@@ -53,10 +52,9 @@ const PizzaDetail = () => {
             Rs. <span className="text-2xl font-bold">{pizzaDetail.price}</span>
           </span>
 
-          <button className="flex items-center bg-theme-orange-300 p-3 my-4">
-            <i className="ri-add-line text-white mr-2"></i>
-            <span className="text-white">Add to Cart</span>
-          </button>
+          {pizzaDetail.size && pizzaDetail.toppings && (
+            <Modal pizza={pizzaDetail} />
+          )}
         </div>
       </div>
     </div>
