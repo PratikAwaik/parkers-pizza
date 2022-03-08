@@ -1,8 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import PizzaDetail from "./pages/PizzaDetail";
 import Navbar from "./components/Navbar";
-import PizzaDetail from "./components/PizzaDetail";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/pizza/:id" exact element={<PizzaDetail />} />
+        <Route path="/cart" exact element={<Cart />} />
       </Routes>
     </div>
   );

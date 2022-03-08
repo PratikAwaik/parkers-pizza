@@ -5,3 +5,9 @@
 .main-section {
   height: calc(70vh - 60px);
 }
+
+@media screen and (max-width: 640px) {
+  .popup-content {
+    width: 90% !important;
+  }
+}

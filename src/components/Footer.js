@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="py-8 px-6 flex items-center justify-around flex-wrap">
-      <div className="w-1/5 mx-8">
+    <div className="py-8 px-6 flex items-center sm:justify-around justify-between flex-wrap">
+      <div className="sm:w-1/5 mx-8 mb-8">
         <h1 className="text-3xl mb-6 font-bold text-theme-orange-300">
           Parker's Pizza
         </h1>
@@ -20,7 +20,7 @@ const Footer = () => {
           <i className="ri-linkedin-fill text-theme-orange-300 mr-3 text-2xl cursor-pointer"></i>
         </div>
       </div>
-      <div className="w-fit mx-8">
+      <div className="sm:w-fit mx-8 mb-8">
         <p className="font-bold mb-4">About</p>
         <Link to="#" className="text-gray-500 mb-4 block">
           About Us
@@ -35,7 +35,7 @@ const Footer = () => {
           Menu
         </Link>
       </div>
-      <div className="w-fit mx-8">
+      <div className="w-fit mx-8 mb-8">
         <p className="font-bold mb-4">Company</p>
         <Link to="#" className="text-gray-500 mb-4 block">
           Why We?
@@ -50,7 +50,7 @@ const Footer = () => {
           Blog
         </Link>
       </div>
-      <div className="w-fit mx-8">
+      <div className="w-fit mx-8 mb-8">
         <p className="font-bold mb-4">Support</p>
         <Link to="#" className="text-gray-500 mb-4 block">
           Account
