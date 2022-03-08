@@ -45,7 +45,6 @@ const Filters = ({ setLoading }) => {
     setSort("sort");
     setIsVeg("all");
     dispatch({ type: "SET_PIZZAS", payload: unFilteredPizzas });
-    setLoading(true);
   };
 
   return (
@@ -69,7 +68,7 @@ const Filters = ({ setLoading }) => {
         </div>
 
         <div className="flex items-center mb-4">
-          <span className="text-gray-500 font-bold text-lg mr-2">Veg: </span>
+          <span className="text-gray-500 font-bold text-lg mr-2">Type: </span>
           <select
             className="form-select appearance-none block w-44 px-3 py-1.5 text-base font-normal rounded-2xl text-gray-500 bg-white bg-clip bg-no-repeat border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-theme-orange-300 focus:outline-none mr-6"
             value={isVeg}
