@@ -32,7 +32,7 @@ const CartItem = ({ cartItem }) => {
         src={cartItem.pizza.img_url}
         alt={cartItem.pizza.name}
       />
-      <div className="w-2/3">
+      <div className="w-full sm:w-2/3">
         <h3 className="font-bold text-2xl mb-2 whitespace-nowrap">
           {cartItem.pizza.name}
         </h3>
