@@ -86,6 +86,7 @@ const AddItemModal = ({ pizza }) => {
                 type="number"
                 id="quantity"
                 className="w-16 rounded-lg pl-3 border-2 border-theme-gray-500 outline-none"
+                min="1"
                 value={quantity}
                 onChange={({ target }) => setQuantity(target.value)}
               />

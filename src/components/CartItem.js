@@ -4,7 +4,7 @@ import Popup from "reactjs-popup";
 
 const CartItem = ({ cartItem }) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [newQuantity, setNewQuantity] = useState(0);
+  const [newQuantity, setNewQuantity] = useState(1);
   const dispatch = useDispatch();
 
   const editPizzaQuantity = (e, cartItemToEdit) => {
@@ -73,6 +73,7 @@ const CartItem = ({ cartItem }) => {
                       type="number"
                       id="quantity"
                       className="w-16 rounded-lg pl-3 border-2 border-theme-gray-500 outline-none"
+                      min="1"
                       value={newQuantity}
                       onChange={({ target }) => setNewQuantity(target.value)}
                     />
